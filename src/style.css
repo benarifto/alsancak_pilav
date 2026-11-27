@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Color Palette ── */
+  --color-cream-50:  #fdfaf5;
+  --color-cream-100: #f8f1e4;
+  --color-cream-200: #f0e2c8;
+  --color-cream-300: #e4ccaa;
+
+  --color-brown-800: #3b2314;
+  --color-brown-700: #4f3122;
+  --color-brown-600: #6b4226;
+  --color-brown-500: #8b5e3c;
+  --color-brown-400: #a67c52;
+  --color-brown-300: #c4a07a;
+  --color-brown-100: #e8d5b7;
+
+  --color-terracotta-600: #c0623a;
+  --color-terracotta-500: #d4785a;
+  --color-terracotta-400: #e09070;
+  --color-terracotta-100: #f5ddd5;
+
+  --color-olive-600: #5a6e3a;
+  --color-olive-500: #748a4a;
+  --color-olive-400: #8fa65e;
+  --color-olive-100: #dce8c8;
+
+  /* ── Typography ── */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  /* ── Radius ── */
+  --radius-card: 1rem;
+  --radius-btn:  0.5rem;
+}
+
+/* ── Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream-50);
+  color: var(--color-brown-800);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Utility classes used throughout ── */
+.font-display { font-family: var(--font-display); }
+
+/* Loading skeleton animation */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--color-cream-100) 25%, var(--color-cream-200) 50%, var(--color-cream-100) 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: 0.5rem;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-terracotta-500);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-cream-100); }
+::-webkit-scrollbar-thumb { background: var(--color-brown-300); border-radius: 3px; }
+
+/* Print styles */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}

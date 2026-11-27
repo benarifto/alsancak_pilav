@@ -132,3 +132,4 @@ Quick summary:
 ## Security
 
 See `SECURITY.md` for a full explanation of authentication, RLS, and secret management.
+"# alsancak_pilav" 
